@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLinks } from "../constants";
+import { navLinks } from "../constants";
 
 const NavBar = () => {
   return (
@@ -8,7 +8,7 @@ const NavBar = () => {
         <nav>
           <img src="/logo.svg" alt="Apple Logo" />
           <ul>
-            {NavLinks.map(({ label }) => (
+            {navLinks.map(({ label }) => (
               <li key={{ label }}>
                 <a href={label}>{label}</a>
               </li>
