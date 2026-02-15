@@ -47,7 +47,7 @@ const Showcase = () => {
 
               <p>
                 It drives Apple Intelligence on iPad Pro, so you can write,
-                create, and accomplish more with ease. All in a design that’s
+                create, and accomplish more with ease. All in a design that's
                 unbelievably thin, light, and powerful.
               </p>
               <p>
