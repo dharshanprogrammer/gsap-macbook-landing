@@ -1,5 +1,5 @@
 import React from "react";
-import UseMacBookStore from "..";
+import useMacBookStore from "..";
 import { clsx } from "clsx";
 import { Canvas } from "@react-three/fiber";
 import { Box } from "@react-three/drei";
@@ -14,7 +14,7 @@ import { useMediaQuery } from "react-responsive";
   console.log("Dharshan Programmer");
 }
 const ProductViewer = () => {
-  const { SetScale, SetColor, color, scale } = UseMacBookStore();
+  const { setScale, setColor, color, scale } = useMacBookStore();
   const isMobile = useMediaQuery({query:'(max-width:1024px)'});
   return (
     <section id="product-viewer">
@@ -25,20 +25,20 @@ const ProductViewer = () => {
         <div className="flex-center gap-5 mt-5">
           <div className="color-control">
             <div
-              onClick={() => SetColor("#adb5b2")}
+              onClick={() => setColor("#adb5b2")}
               className={clsx(
                 "bg-neutral-300",
                 color === "#adb5b2" && "active"
               )}
             />
             <div
-              onClick={() => SetColor("#2e2c2e")}
+              onClick={() => setColor("#2e2c2e")}
               className={clsx("bg-neutral-900", color == "#2e2c2e" && "active")}
             />
           </div>
           <div className="size-control">
             <div
-              onClick={() => SetScale(0.06)}
+              onClick={() => setScale(0.06)}
               className={clsx(
                 scale === 0.06
                   ? "bg-white text-black"
@@ -48,7 +48,7 @@ const ProductViewer = () => {
               <p>14"</p>
             </div>
             <div
-              onClick={() => SetScale(0.08)}
+              onClick={() => setScale(0.08)}
               className={clsx(
                 scale === 0.08
                   ? "bg-white text-black"
