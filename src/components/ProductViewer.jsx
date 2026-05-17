@@ -60,7 +60,7 @@ const ProductViewer = () => {
           </div>
         </div>
       </div>
-      <p className="text-white text-4xl">Render Canvas</p>
+
       <Canvas
         id="canvas"
         camera={{ position: [0, 3, 5], fov: 50, near: 0.1, far: 100 }}
