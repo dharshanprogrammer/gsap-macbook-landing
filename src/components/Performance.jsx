@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Performance = () => {
-  const isMoblie  = useMediaQuery({query:'(max-width:1024px)'});
+  const isMobile  = useMediaQuery({query:'(max-width:1024px)'});
   const sectionRef = useRef(null);
   useGSAP(
     ()=>{
@@ -31,7 +31,7 @@ const Performance = () => {
 
 
       );
-      if(isMoblie) return;
+      if(isMobile) return;
       
       const tl = gsap.timeline({
         defaults:{duration:2,ease:"power1.inOut",overwrite:true},
@@ -57,14 +57,14 @@ const Performance = () => {
         if(item.transform) varargs.transform = item.transform;
         tl.to(selector,varargs,0)
       })
-    },{scope:sectionRef,dependencies:[isMoblie]}
+    },{scope:sectionRef,dependencies:[isMobile]}
   );
   return (
     <section id="performance" ref={sectionRef}>
       <h2>Next level graphics Performance. Game On.</h2>
       <div className="wrapper">
         {performanceImages.map((item,index)=>(
-          <img key={index} src={item.src} alt={item.alt} className={item.id}/>
+          <img key={index} src={item.src} alt={item.alt || `Performance Images ${index+1}`} className={item.id}/>
         ))};
 
       </div>
